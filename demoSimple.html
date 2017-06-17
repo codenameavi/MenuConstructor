@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<title>Menu Constructor V.1</title>
+<link rel="stylesheet" href="css/menuConstructor.v.1.css" media="screen" />
+
+<script src="js/jquery-1.10.1.min.js"></script> 
+<script src="js/menuConstructor.v.1.js"></script>
+
+<style>
+body {
+	width:500px;
+}
+pre {
+	margin:10px 20px;
+}
+#myMenu1, #myMenu2, #myMenu3, #myMenu4, #myMenu5, #myMenu6, #myMenu7 {
+	float: left;
+	width:auto;
+	border:solid 1px #000;
+}
+#menuTitle {
+	float:left;
+	width: 100%;
+	margin:120px 0 10px;
+	border-top:solid 2px #000;
+	font-weight:bold;
+}
+</style>
+
+<script>
+$(function () {
+	
+	// A simple menu with DEFAULT options
+	$("#myMenu1").constructMenu();
+	
+	// A simple Vertical menu
+	$("#myMenu2").constructMenu({menu:'Vertical'});
+	
+	// A Vertical menu with Tree-view
+	$("#myMenu3").constructMenu({menu:'Vertical',accordion:false,childPopUp:false});
+	
+	// A menu with Custom Colors
+	$("#myMenu4").constructMenu({menuDefaultColors:['#fff','#235DAB'], menuHoverColors:['#5DBCD2','#fff']});
+	
+	// A menu with Custom icons
+	$("#myMenu5").constructMenu({exapandImage: 'images/arrow_down.png', collapseImage: 'images/arrow_right.png'});
+	
+	// A menu with Pre-selected item
+	$("#myMenu6").constructMenu({menu: 'vertical'});
+	
+	// A menu with method chaining
+	$("#myMenu7").constructMenu().css('border','solid 2px RED');
+	
+	$('a').click(function(e) {
+		
+		e.preventDefault();
+	})
+});
+</script>
+</head>
+<body>
+
+<!------------ 1. A simple Horizontal menu starts ------------>
+<div id="menuTitle" style="margin-top:10px;border-width:0">
+	1. A simple Horizontal menu:
+	<br/>
+	<pre>$("#myMenu1").constructMenu();</pre>
+</div>
+<div id="myMenu1">
+<ul>
+	<li><a href="#">Facebook</a></li>
+	<li><a href="#">Twitter</a>
+		<ul>
+			<li><a href="#">Twitter A</a></li>
+			<li><a href="#">Twitter B</a></li>
+			<li><a href="#">Twitter C</a>
+				<ul>
+					<li><a href="#">Twitter C 1</a></li>
+					<li><a href="#">Twitter C 2</a>
+						<ul>
+							<li><a href="#">Twitter C 1</a></li>
+							<li><a href="#">Twitter C 2</a></li>
+							<li><a href="#">Twitter C 3</a></li>
+							<li><a href="#">Twitter C 4</a>
+								<ul>
+									<li><a href="#">Twitter C 4 i</a></li>
+									<li><a href="#">Twitter C 4 ii</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Email</a></li>
+	<li><a href="#">Print</a>
+		<ul>
+			<li><a href="#">Print A</a></li>
+			<li><a href="#">Print B</a></li>
+			<li><a href="#">Print C</a></li>
+		</ul>
+</ul>
+</div>
+<!------------ 1. A simple Horizontal menu ends ------------>
+
+
+<!------------ 2. A simple Vertical menu starts ------------>
+<div id="menuTitle">
+	2. A simple Vertical menu:
+	<br/>
+	<pre>$("#myMenu2").constructMenu({menu:'Vertical'});</pre>
+</div>
+<div id="myMenu2">
+<ul>
+	<li><a href="#">Facebook</a></li>
+	<li><a href="#">Twitter</a>
+		<ul>
+			<li><a href="#">Twitter A</a></li>
+			<li><a href="#">Twitter B</a></li>
+			<li><a href="#">Twitter C</a>
+				<ul>
+					<li><a href="#">Twitter C 1</a></li>
+					<li><a href="#">Twitter C 2</a>
+						<ul>
+							<li><a href="#">Twitter C 1</a></li>
+							<li><a href="#">Twitter C 2</a></li>
+							<li><a href="#">Twitter C 3</a></li>
+							<li><a href="#">Twitter C 4</a>
+								<ul>
+									<li><a href="#">Twitter C 4 i</a></li>
+									<li><a href="#">Twitter C 4 ii</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Email</a></li>
+	<li><a href="#">Print</a>
+		<ul>
+			<li><a href="#">Print A</a></li>
+			<li><a href="#">Print B</a></li>
+			<li><a href="#">Print C</a></li>
+		</ul>
+</ul>
+</div>
+<!------------ 2. A simple Vertical menu ends ------------>
+
+<!------------ 3. A Vertical menu with Tree-view starts ------------>
+<div id="menuTitle">
+	3. A Vertical menu with Tree-view:
+	<br/>
+	<pre>$("#myMenu3").constructMenu({menu:'Vertical',accordion:false,childPopUp:false});</pre>
+</div>
+<div id="myMenu3">
+<ul>
+	<li><a href="#">Facebook</a></li>
+	<li><a href="#">Twitter</a>
+		<ul>
+			<li><a href="#">Twitter A</a></li>
+			<li><a href="#">Twitter B</a></li>
+			<li><a href="#">Twitter C</a>
+				<ul>
+					<li><a href="#">Twitter C 1</a></li>
+					<li><a href="#">Twitter C 2</a>
+						<ul>
+							<li><a href="#">Twitter C 1</a></li>
+							<li><a href="#">Twitter C 2</a></li>
+							<li><a href="#">Twitter C 3</a></li>
+							<li><a href="#">Twitter C 4</a>
+								<ul>
+									<li><a href="#">Twitter C 4 i</a></li>
+									<li><a href="#">Twitter C 4 ii</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Email</a></li>
+	<li><a href="#">Print</a>
+		<ul>
+			<li><a href="#">Print A</a></li>
+			<li><a href="#">Print B</a></li>
+			<li><a href="#">Print C</a></li>
+		</ul>
+</ul>
+</div>
+<!------------ 3. A Vertical menu with Tree-view ends ------------>
+
+<!------------ 4. A menu with custom colors starts ------------>
+<div id="menuTitle">
+	4. A Menu with Custom colors:
+	<br/>
+	<pre>$("#myMenu4").constructMenu({menuDefaultColors:['#fff','#235DAB'], menuHoverColors:['#5DBCD2','#fff'],});</pre>
+</div>
+<div id="myMenu4">
+<ul>
+	<li><a href="#">Facebook</a></li>
+	<li><a href="#">Twitter</a>
+		<ul>
+			<li><a href="#">Twitter A</a></li>
+			<li><a href="#">Twitter B</a></li>
+			<li><a href="#">Twitter C</a>
+				<ul>
+					<li><a href="#">Twitter C 1</a></li>
+					<li><a href="#">Twitter C 2</a>
+						<ul>
+							<li><a href="#">Twitter C 1</a></li>
+							<li><a href="#">Twitter C 2</a></li>
+							<li><a href="#">Twitter C 3</a></li>
+							<li><a href="#">Twitter C 4</a>
+								<ul>
+									<li><a href="#">Twitter C 4 i</a></li>
+									<li><a href="#">Twitter C 4 ii</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Email</a></li>
+	<li><a href="#">Print</a>
+		<ul>
+			<li><a href="#">Print A</a></li>
+			<li><a href="#">Print B</a></li>
+			<li><a href="#">Print C</a></li>
+		</ul>
+</ul>
+</div>
+<!------------ 4. A menu with custom colors ends ------------>
+
+
+<!------------ 4. A menu with custom icons starts ------------>
+<div id="menuTitle">
+	5. A Menu with Custom icons:
+	<br/>
+	<pre>$("#myMenu5").constructMenu({exapandImage: 'images/arrow_down.png', collapseImage: 'images/arrow_right.png'});</pre>
+</div>
+<div id="myMenu5">
+<ul>
+	<li><a href="#">Facebook</a></li>
+	<li><a href="#">Twitter</a>
+		<ul>
+			<li><a href="#">Twitter A</a></li>
+			<li><a href="#">Twitter B</a></li>
+			<li><a href="#">Twitter C</a>
+				<ul>
+					<li><a href="#">Twitter C 1</a></li>
+					<li><a href="#">Twitter C 2</a>
+						<ul>
+							<li><a href="#">Twitter C 1</a></li>
+							<li><a href="#">Twitter C 2</a></li>
+							<li><a href="#">Twitter C 3</a></li>
+							<li><a href="#">Twitter C 4</a>
+								<ul>
+									<li><a href="#">Twitter C 4 i</a></li>
+									<li><a href="#">Twitter C 4 ii</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Email</a></li>
+	<li><a href="#">Print</a>
+		<ul>
+			<li><a href="#">Print A</a></li>
+			<li><a href="#">Print B</a></li>
+			<li><a href="#">Print C</a></li>
+		</ul>
+</ul>
+</div>
+<!------------ 5. A menu with custom icons ends ------------>
+
+
+<!------------ 6. A menu with preselected item starts ------------>
+<div id="menuTitle">
+	6. A Menu with Pre-selected item:
+	<br/>
+	<pre>1. $("#myMenu6").constructMenu({menu: 'vertical'});</pre>
+	<pre>2. Added "activeMenu" class to the list item</pre>
+</div>
+<div id="myMenu6">
+<ul>
+	<li><a href="#">Facebook</a></li>
+	<li><a href="#">Twitter</a>
+		<ul>
+			<li><a href="#">Twitter A</a></li>
+			<li><a href="#">Twitter B</a></li>
+			<li><a href="#">Twitter C</a>
+				<ul>
+					<li class="activeMenu"><a href="#">Twitter C 1</a></li>
+					<li><a href="#">Twitter C 2</a>
+						<ul>
+							<li><a href="#">Twitter C 1</a></li>
+							<li><a href="#">Twitter C 2</a></li>
+							<li><a href="#">Twitter C 3</a></li>
+							<li><a href="#">Twitter C 4</a>
+								<ul>
+									<li><a href="#">Twitter C 4 i</a></li>
+									<li><a href="#">Twitter C 4 ii</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Email</a></li>
+	<li><a href="#">Print</a>
+		<ul>
+			<li><a href="#">Print A</a></li>
+			<li><a href="#">Print B</a></li>
+			<li><a href="#">Print C</a></li>
+		</ul>
+</ul>
+</div>
+<!------------ 6. A menu with Preselected item ends ------------>
+
+<!------------ 7. A menu with method chaining starts ------------>
+<div id="menuTitle">
+	7. A Menu with Method-chaining:
+	<br/>
+	<pre>$("#myMenu7").constructMenu().css('border','solid 2px RED');</pre>
+</div>
+<div id="myMenu7" style="margin-bottom:300px">
+<ul>
+	<li><a href="#">Facebook</a></li>
+	<li><a href="#">Twitter</a>
+		<ul>
+			<li><a href="#">Twitter A</a></li>
+			<li><a href="#">Twitter B</a></li>
+			<li><a href="#">Twitter C</a>
+				<ul>
+					<li><a href="#">Twitter C 1</a></li>
+					<li><a href="#">Twitter C 2</a>
+						<ul>
+							<li><a href="#">Twitter C 1</a></li>
+							<li><a href="#">Twitter C 2</a></li>
+							<li><a href="#">Twitter C 3</a></li>
+							<li><a href="#">Twitter C 4</a>
+								<ul>
+									<li><a href="#">Twitter C 4 i</a></li>
+									<li><a href="#">Twitter C 4 ii</a></li>
+								</ul>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+	<li><a href="#">Email</a></li>
+	<li><a href="#">Print</a>
+		<ul>
+			<li><a href="#">Print A</a></li>
+			<li><a href="#">Print B</a></li>
+			<li><a href="#">Print C</a></li>
+		</ul>
+</ul>
+</div>
+<!------------ 7. A menu with method chaining ends ------------>
+
+</body>
+</html>

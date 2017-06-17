@@ -1,0 +1,82 @@
+ul.menuConstructor, ul.menuConstructor ul{
+	list-style-type:none;
+	display:block;
+	background:#FFF;
+	margin:0;
+	padding:0;
+}
+ul.menuChildPopUp ul{
+	border:solid 1px #DDD;
+}
+ul.menuConstructor ul{
+	padding-top:0;
+}
+ul.menuConstructor ul li{
+	border-top:0;
+}
+ul.menuConstructor {
+	width:350px;
+}
+ul.menuConstructor ul {
+	margin-left:10px;
+}
+ul.menuConstructor li {
+	display:block;
+	padding:0px;
+	border-top: solid 1px #DDD;
+}
+/* ul.menuConstructor li:hover{
+background-color:#ff0000;
+} */
+ul.menuConstructor li:hover ul{
+background-color:none;
+}
+
+ul.menuConstructor li a{
+	display: block;
+	padding: 10px 20px;
+	line-height:16px;
+	text-decoration:none;
+}
+
+ul.menuConstructor li img.menuConstructorIcon {
+	cursor:pointer;
+	margin-right: 5px;
+}
+.childPopUp{
+	position:absolute;
+	width: 250px;
+	margin-left:20px;
+}
+
+ul.menuConstructor .horizontalMenu{
+	float:left;
+}
+ul.menuConstructor li.horizontalMenu {
+	border-left:solid 1px #DDD;
+}
+
+ul.menuConstructor li a.facebook{
+	background:url(../images/socialIcons.png) no-repeat;
+	background-position: 0 -288px;
+}
+ul.menuConstructor li a.twitter{
+	background:url(../images/socialIcons.png) no-repeat;
+	background-position: 0 -864px;
+}
+ul.menuConstructor li a.email{
+	background:url(../images/socialIcons.png) no-repeat;
+	background-position: 0 -272px;
+}
+ul.menuConstructor li a.print{
+	background:url(../images/socialIcons.png) no-repeat;
+	background-position: 0 -720px;
+}
+ul.menuConstructor li a.gmail{
+	background:url(../images/socialIcons.png) no-repeat;
+	background-position: 0 -336px;
+}
+ul.menuConstructor li a.stumbleUpon{
+	background:url(../images/socialIcons.png) no-repeat;
+	background-position: 0 -816px;
+}
